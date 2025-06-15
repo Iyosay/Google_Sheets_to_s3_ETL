@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from Tasks.Google_sheet import extract_records
+from Google_sheet import extract_records
 
 default_args = {
 'owner': 'joy',
