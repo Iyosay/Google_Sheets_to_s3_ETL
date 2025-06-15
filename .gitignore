@@ -1,0 +1,11 @@
+*env
+Terraform/*terraform*
+api.ipynb
+.terraform.lock.hcl
+.gitignore.save
+__pycache__
+logs
+plugins
+config
+**/credentials.json
+**/.json

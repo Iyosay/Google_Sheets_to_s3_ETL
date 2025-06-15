@@ -1,0 +1,2 @@
+awswrangler==3.10.0
+gspread==6.2.1
