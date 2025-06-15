@@ -6,7 +6,6 @@ from airflow.models import Variable
 from datetime import datetime
 
 
-
 client = gspread.service_account(filename="credentials.json")
 
 spreadsheet = client.open("DE_Biodata")
@@ -33,7 +32,9 @@ def extract_records():
             region_name='eu-central-1'
     )
     date_str = datetime.today().strftime('%Y-%m-%d')
-    path=f's3://googlesheet_DE_Biodata/name-and-origin/google_sheet_{date_str}.parquet'
+    path=f's3://googlesheet-de-biodata/name-and-origin/google_sheet_{date_str}.parquet'
+    
+
 
     wr.s3.to_parquet(
             df=bio_data,
@@ -42,4 +43,3 @@ def extract_records():
             boto3_session=session
     )
     return bio_data
-        
